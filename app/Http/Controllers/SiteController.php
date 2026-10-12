@@ -31,6 +31,11 @@ class SiteController extends Controller
 
 
     }
+            public function viewSite()
+    {
+        $sites = Site::all();
+        return view('site.view', compact('sites'));
+    }
 
 }
 
