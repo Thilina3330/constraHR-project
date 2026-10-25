@@ -11,3 +11,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/create-site',[App\Http\Controllers\SiteController::class,'index']);
 Route::post('/store_site', [App\Http\Controllers\SiteController::class,'store']) ;
+Route::get('/view-site', [App\Http\Controllers\SiteController::class, 'viewSite']);
