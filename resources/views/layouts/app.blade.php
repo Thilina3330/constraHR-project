@@ -18,6 +18,7 @@
 </head>
 <body>
     <div id="app">
+      <!--  @unless(request()->is('login')||request()->is('register')) -->
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -30,12 +31,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        
                         <li class="nav-item">
-                                    <a class="nav-link" href="/create-site">{{ __('Create Site') }}</a>
-                                </li>
+                                    <a class="nav-link" href="/view-site">{{ __('My Site') }}</a>
+                        </li>
                         <li class="nav-item">
-                                    <a class="nav-link" href="/view-site">{{ __('view Site') }}</a>
-                                </li>
+                                    <a class="nav-link" href="/view_user">{{ __('User Management') }}</a>
+                        </li>
 
                     </ul>
 
@@ -77,7 +79,7 @@
                 </div>
             </div>
         </nav>
-
+        <!--@endunless -->
         <main class="py-4">
             @yield('content')
         </main>

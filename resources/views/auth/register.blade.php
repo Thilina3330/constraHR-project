@@ -1,11 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    .card-header{
+       background-color: #082544;
+       color:white;
+
+    }
+
+    .logo_1{
+        height: inherit;
+        width: 5px;
+        align:center;
+    }
+</style>
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Sign Up') }}</div>
+
+            <div class='logo_1'>
+                <img src="{{asset('images/logo_1.png')}}" alt="Logo">
+            </div>
+               
+               <center><H1>Welcome to ConstraHR</H1></center> 
+
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -63,10 +85,16 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                               <center> <button type="submit" class="btn btn-primary"  style="background-color:#F59A00;">
                                     {{ __('Register') }}
-                                </button>
+                                </button></center>
                             </div>
+                        </div>
+                        </div>
+                        <!-- Already have an account link -->
+                        <div class="text-center mt-3">
+                            <span class="text-muted">Already have an account?</span> 
+                            <a href="{{ route('login') }}" class="text-decoration-none fw-bold" style="color: #0c0fbb;">Login here</a>
                         </div>
                     </form>
                 </div>
