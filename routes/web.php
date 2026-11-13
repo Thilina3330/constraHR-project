@@ -12,3 +12,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/create-site',[App\Http\Controllers\SiteController::class,'index']);
 Route::post('/store_site', [App\Http\Controllers\SiteController::class,'store']) ;
 Route::get('/view-site', [App\Http\Controllers\SiteController::class, 'viewSite']);
+Route::get('/employe', [App\Http\Controllers\EmployeeController::class, 'index']);

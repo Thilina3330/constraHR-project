@@ -90,7 +90,6 @@
                                 </button></center>
                             </div>
                         </div>
-                        </div>
                         <!-- Already have an account link -->
                         <div class="text-center mt-3">
                             <span class="text-muted">Already have an account?</span> 
