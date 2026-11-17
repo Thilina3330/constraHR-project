@@ -11,13 +11,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Authentication Routes (Login, Register, Logout ආදිය)
+// Authentication Routes (Login, Register, Logout)
 Auth::routes();
 
 // Dashboard
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-// Authenticated Routes (Login වූ අයට පමණක් ප්‍රවේශ විය හැකි පරිදි)
+// Authenticated Routes
 Route::middleware(['auth'])->group(function () {
     
     // --- 🏗️ Site Management Routes ---
@@ -30,6 +30,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/expenses', [SiteExpenseController::class, 'index'])->name('expenses.index');
     Route::post('/expenses/store', [SiteExpenseController::class, 'store'])->name('expenses.store');
 
-    // --- 👷 Employee Route (දැනට ඇති) ---
-    Route::get('/employe', [EmployeeController::class, 'index'])->name('employe.index');
+    // --- 👷 Employee Management Routes ---
+    Route::get('/employe', [EmployeeController::class, 'index'])->name('employee.index');
+    Route::get('/create-employee', [EmployeeController::class, 'create'])->name('employee.create');
+    Route::post('/store-employee', [EmployeeController::class, 'store'])->name('employee.store');
+    Route::get('/employee/success/{id}', [EmployeeController::class, 'success'])->name('employee.success');
 });

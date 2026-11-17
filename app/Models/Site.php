@@ -18,19 +18,19 @@ class Site extends Model
         'site_engineer_id',
     ];
 
-    // Site එකට අදාළ සියලුම Tasks ලබා ගැනීම
+   
     public function tasks()
     {
         return $this->hasMany(SiteTask::class, 'site_id', 'Site_id');
     }
 
-    // Site එකට අදාළ සියලුම Expenses ලබා ගැනීම
+    
     public function expenses()
     {
         return $this->hasMany(SiteExpense::class, 'site_id', 'Site_id');
     }
 
-    // Tasks අනුව Progress percentage එක (0 - 100%) ස්වයංක්‍රීයව ගණනය කිරීම
+    
     public function getProgressPercentageAttribute()
     {
         $total = $this->tasks()->count();
@@ -38,5 +38,9 @@ class Site extends Model
         
         $completed = $this->tasks()->where('status', 'completed')->count();
         return round(($completed / $total) * 100);
+    }
+        public function employees()
+    {
+        return $this->hasMany(Employee::class, 'site_id', 'Site_id');
     }
 }

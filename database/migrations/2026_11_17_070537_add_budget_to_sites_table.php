@@ -9,20 +9,17 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+        public function up(): void
     {
         Schema::table('sites', function (Blueprint $table) {
-            //
+            $table->decimal('budget', 15, 2)->default(0)->after('location');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::table('sites', function (Blueprint $table) {
-            //
+            $table->dropColumn('budget');
         });
     }
 };
