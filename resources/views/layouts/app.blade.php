@@ -51,15 +51,16 @@
                         </div>
                     </li>
 
-                    <!-- Topic 2: Employee Management -->
+                                <!-- Topic 2: Employee Management -->
                     <li class="nav-item mb-1">
                         <a class="nav-link text-white d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#empMenu" role="button" aria-expanded="false">
                             <span>👷 {{ __('Employee Management') }}</span>
                             <small>▼</small>
                         </a>
-                        <div class="collapse {{ request()->is('*employe*') ? 'show' : '' }}" id="empMenu">
+                        <div class="collapse {{ request()->is('*employee*') ? 'show' : '' }}" id="empMenu">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ps-3 mt-1">
-                                <li><a href="/employe" class="nav-link text-white-50 py-1">👥 {{ __('View Employee') }}</a></li>
+                                <li><a href="{{ route('employees.index') }}" class="nav-link text-white-50 py-1">👥 {{ __('View Employee') }}</a></li>
+                                <li><a href="{{ route('employees.create') }}" class="nav-link text-white-50 py-1">➕ {{ __('Add Employee') }}</a></li>
                             </ul>
                         </div>
                     </li>
