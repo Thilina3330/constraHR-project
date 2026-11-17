@@ -18,9 +18,10 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 ">
             <div class="card">
-                <div class="card-header">{{ __('Sign Up') }}</div>
+
+                <div class="card-header" >{{ __('Sign Up') }}</div>
 
             <div class='logo_1'>
                 <img src="{{asset('images/logo_1.png')}}" alt="Logo">
